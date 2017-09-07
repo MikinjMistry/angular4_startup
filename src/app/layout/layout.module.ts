@@ -12,6 +12,8 @@ import { SidebarModule } from './sidebar/sidebar.module';
 import { HomeComponent } from './home/home.component';
 import { LayoutComponent } from './layout.component';
 
+import { DataTablesModule } from 'angular-datatables';
+
 @NgModule({
   declarations: [
     HomeComponent,
@@ -24,7 +26,8 @@ import { LayoutComponent } from './layout.component';
     FooterModule,
     SidebarModule,
     RouterModule,
-    AppRoutingModule
+    AppRoutingModule,
+    DataTablesModule
   ],
   providers: [],
 })

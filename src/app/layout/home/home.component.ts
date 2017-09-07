@@ -7,11 +7,13 @@ import { LocationStrategy, PlatformLocation, Location } from '@angular/common';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-    
+  dtOptions: DataTables.Settings = {};  
   constructor() { }
 
   ngOnInit() {
-    
+    	this.dtOptions = {
+	      pagingType: 'full_numbers'
+	    };
     }
 
 }

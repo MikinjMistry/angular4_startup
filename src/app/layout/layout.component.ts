@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { LocationStrategy, PlatformLocation, Location } from '@angular/common';
 
 @Component({
   selector: 'app-layout',
@@ -8,12 +8,20 @@ import { Router } from '@angular/router';
 })
 export class LayoutComponent implements OnInit {
 
-  constructor(public router: Router) { }
+  	constructor(public location: Location) {}
 
-  ngOnInit() {
-    if (this.router.url === '/') {
-      this.router.navigate(['/dashboard']);
+    ngOnInit(){
     }
-  }
+
+    isMap(path){
+      var titlee = this.location.prepareExternalUrl(this.location.path());
+      titlee = titlee.slice( 1 );
+      if(path == titlee){
+        return false;
+      }
+      else {
+        return true;
+      }
+    }
 
 }

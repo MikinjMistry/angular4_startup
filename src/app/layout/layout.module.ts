@@ -1,22 +1,32 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { LayoutComponent } from './layout.component';
-import { Routes, RouterModule } from '@angular/router';
+import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
+import { RouterModule } from '@angular/router';
 
-const routes: Routes = [
-  {
-    path: '', component: LayoutComponent,
-    children: [
-      { path: 'dashboard', loadChildren: './dashboard/dashboard.module#DashboardModule' },
-    ]
-  }
-];
+import { AppRoutingModule } from './app.routing';
+import { NavbarModule } from './shared/navbar/navbar.module';
+import { FooterModule } from './shared/footer/footer.module';
+import { SidebarModule } from './sidebar/sidebar.module';
+
+import { HomeComponent } from './home/home.component';
+import { LayoutComponent } from './layout.component';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    RouterModule.forChild(routes)
+  declarations: [
+    HomeComponent,
+    LayoutComponent,
   ],
-  declarations: [LayoutComponent]
+  imports: [
+    FormsModule,
+    HttpModule,
+    NavbarModule,
+    FooterModule,
+    SidebarModule,
+    RouterModule,
+    AppRoutingModule
+  ],
+  providers: [],
 })
+
 export class LayoutModule { }

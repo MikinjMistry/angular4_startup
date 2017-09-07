@@ -9,10 +9,10 @@
         </a>
     </div>
     <ul class="nav responsive-nav">
-        <li routerLinkActive="active" *ngFor="let menuItem of menuItems" class="{{menuItem.class}}">
-            <a  [routerLink]="[menuItem.path]">
-                <i class="{{menuItem.icon}}"></i>
-                <p>{{menuItem.title}}</p>
+        <li routerLinkActive="active">
+            <a [routerLink]="['/dashboard']">
+                <i class="pe-7s-graph"></i>
+                <p>Dashboard</p>
             </a>
         </li>
     </ul>

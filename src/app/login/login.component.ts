@@ -21,7 +21,7 @@ export class LoginComponent implements OnInit {
     if(this.email == "test@gmail.com" && this.password == "test") {
     	this.error = false;
     	console.log("login successful");
-    	this.router.navigate(['/dashboard']);
+    	this.router.navigate(['/workplace']);
     } else {
     	this.error = true;
     	this.message = "Invalid username and password";

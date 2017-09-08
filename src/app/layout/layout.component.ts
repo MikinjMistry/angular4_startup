@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { LocationStrategy, PlatformLocation, Location } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-layout',
@@ -8,7 +9,9 @@ import { LocationStrategy, PlatformLocation, Location } from '@angular/common';
 })
 export class LayoutComponent implements OnInit {
 
-  	constructor(public location: Location) {}
+  	constructor(public location: Location,public router: Router) {
+      this.router.navigate(['/workplace']);
+    }
 
     ngOnInit(){
     }
